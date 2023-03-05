@@ -54,7 +54,6 @@ const Words  = styled.div({
   flexDirection:'column',
   justifyContent:'center',
   alignItems:'center',
-  fontSize:'11px'
 });
 
 interface CardProps {
