@@ -22,7 +22,8 @@ const Container = styled.div({
     outline: "none",
     width:'100%',
     height:'25%',
-    maxWidth: "450px"
+    maxWidth: '450px',
+    minHeignt:'450px'
 })
 
 function getModalStyle() {
