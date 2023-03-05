@@ -4,7 +4,7 @@ import React from 'react';
 import styled from '@emotion/styled';
 
 const Container = styled.div({
-  width:'90%',
+  width:'80%',
   height:'100%',
   display:'flex',
   flexDirection:'column',
