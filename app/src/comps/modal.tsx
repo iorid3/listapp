@@ -4,15 +4,14 @@ import styled from '@emotion/styled'
 
 const CustomBackdrop = styled.div`
   opacity: 0.7;
-  display:flex:
+  display:flex;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  maxWidth: "400px"
+  maxWidth: "400px";
   z-index: 1000;
 `;
-
 
 const Container = styled.div({
     position: 'absolute',
@@ -26,7 +25,6 @@ const Container = styled.div({
     maxWidth: "450px"
 })
 
-
 function getModalStyle() {
     return {
         top: "50%",
@@ -35,8 +33,13 @@ function getModalStyle() {
     };
 }
 
-const ModalBase = ({children,isOpen,onClose}) => {
+interface Props {
+  isOpen: boolean;
+  onClose: () => void;
+  children: React.ReactNode;
+}
 
+const ModalBase = ({ children, isOpen, onClose }: Props) => {
   const [modalStyle] = useState(getModalStyle);
 
   return (
@@ -45,11 +48,10 @@ const ModalBase = ({children,isOpen,onClose}) => {
         open={isOpen}
         onClose={onClose}
         slots={{ backdrop: CustomBackdrop }}
-       >
-         <Container style={modalStyle}>
-           {children}
-         </Container>    
-      
+      >
+        <Container style={modalStyle}>
+          {children}
+        </Container>
       </Modal>
     </>
   );

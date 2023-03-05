@@ -62,7 +62,6 @@ const Home=() => {
       if(list){
         setArrangeList(list)
         const visibleData = list.slice(startIndex, endIndex);
-        console.log(startIndex,endIndex)
         if (endIndex <= list.length){
           setArrangeList([...arrangeList, ...visibleData])
           setCurrentPage(currentPage + 1);
