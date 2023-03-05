@@ -39,8 +39,6 @@ const Words  = styled.div({
   alignItems:'center',
 })
 
-
-
 // const Enable = styled.p({
 //   fontSize: '14px',
 //   margin: 0,

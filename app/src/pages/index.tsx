@@ -51,6 +51,7 @@ const Home=() => {
     if(count<1){
       const listInfo = await ApiCalls().getAllLists(page)
       const dataList:any = listInfo
+
       setCount(count+1)
       if(dataList){
         setList(dataList)
@@ -93,7 +94,9 @@ const Home=() => {
           <div>Welcome</div>
         {arrangeList.map((index,i) =>(
           <>
-          <Card key = {i} listTitle ={index['title']} listWord = {index['body']} onclick ={()=>handleOpen(i)} />
+          <Card key = {i} listTitle ={index['title']} 
+          listWord = { (index['body'] as string).substring(0, 100)} 
+          onclick ={()=>handleOpen(i)} />
           <ModalBase 
             isOpen={isOpen}
             onClose={handleClose}>
