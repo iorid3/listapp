@@ -51,7 +51,6 @@ const Home=() => {
     if(count<1){
       const listInfo = await ApiCalls().getAllLists(page)
       const dataList:any = listInfo
-
       setCount(count+1)
       if(dataList){
         setList(dataList)
