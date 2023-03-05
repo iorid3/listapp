@@ -26,7 +26,7 @@ const Title  = styled.div({
   flexDirection:'column',
   justifyContent:'center',
   alignItems:'center',
-  margin:5
+  margin:10
 });
 
 const UserId  = styled.div({
@@ -54,6 +54,7 @@ const Words  = styled.div({
   flexDirection:'column',
   justifyContent:'center',
   alignItems:'center',
+  fontSize:'11px'
 });
 
 interface CardProps {
