@@ -26,6 +26,7 @@ const Title  = styled.div({
   flexDirection:'column',
   justifyContent:'center',
   alignItems:'center',
+  margin:5
 });
 
 const UserId  = styled.div({
