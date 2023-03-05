@@ -14,7 +14,6 @@ const CustomBackdrop = styled.div`
 `;
 
 
-
 const Container = styled.div({
     position: 'absolute',
     display: 'flex',
@@ -45,7 +44,7 @@ const ModalBase = ({children,isOpen,onClose}) => {
       <Modal 
         open={isOpen}
         onClose={onClose}
-        BackdropComponent={CustomBackdrop}
+        slots={{ backdrop: CustomBackdrop }}
        >
          <Container style={modalStyle}>
            {children}
