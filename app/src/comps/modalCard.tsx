@@ -6,6 +6,7 @@ import styled from '@emotion/styled';
 const Container = styled.div({
   width:'80%',
   height:'100%',
+  minHeight:'300px',
   display:'flex',
   flexDirection:'column',
   justifyContent:'center',
@@ -20,7 +21,7 @@ const Container = styled.div({
 
 const Title  = styled.div({
   width:'90%',
-  height:'20%',
+  height:'10%',
   display:'flex',
   flexDirection:'column',
   justifyContent:'center',
@@ -47,7 +48,7 @@ const Id  = styled.div({
 
 const Words  = styled.div({
   width:'90%',
-  height:'100%',
+  height:'50%',
   display:'flex',
   flexDirection:'column',
   justifyContent:'center',
