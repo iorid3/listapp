@@ -93,7 +93,7 @@ const Home=() => {
           <div>Welcome</div>
         {arrangeList.map((index,i) =>(
           <>
-          <Card key = {i} listTitle ={index['title']} listWord = {index['body'].substring(0,100)} onclick ={()=>handleOpen(i)} />
+          <Card key = {i} listTitle ={index['title']} listWord = {index['body']} onclick ={()=>handleOpen(i)} />
           <ModalBase 
             isOpen={isOpen}
             onClose={handleClose}>
