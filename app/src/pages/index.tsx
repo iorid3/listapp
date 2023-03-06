@@ -1,6 +1,5 @@
 import styled from "@emotion/styled";
 import React, { useEffect, useState } from "react";
-
 import InfiniteScroll from "react-infinite-scroller";
 
 import ApiCalls from "./api/apiCall";
@@ -131,7 +130,7 @@ const Home = () => {
     return (
       <>
         <Container>
-          <div>Something wrong on API</div>
+          <div>Sorry.Something wrong with this page.Please contact to example@mail.com</div>
         </Container>
       </>
     );
