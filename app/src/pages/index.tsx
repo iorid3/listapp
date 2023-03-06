@@ -41,11 +41,13 @@ const Home = () => {
     getAllList();
   }, []);
 
-  const page = 5;
+
+  // this userInfo is for the future developemnt. When this app has a user signin/up funtion
+  const userInfo = "";
 
   const getAllList = async () => {
     if (count < 1) {
-      const listInfo = await ApiCalls().getAllLists(page);
+      const listInfo = await ApiCalls().getAllLists(userInfo);
       const dataList: any = listInfo;
       setCount(count + 1);
       if (dataList) {
