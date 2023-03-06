@@ -12,6 +12,7 @@ const Container = styled.div({
   flexDirection: "column",
   justifyContent: "center",
   alignItems: "center",
+  background: "#f9e8ff",
 });
 
 const Wrapper = styled.div({
@@ -86,7 +87,7 @@ const Home = () => {
     <>
       <Container>
         <Wrapper>
-          <div>Welcome</div>
+          <div>REL Technology - FE assignment</div>
           {arrangeList.map((index, i) => (
             <>
               <Card
@@ -130,7 +131,10 @@ const Home = () => {
     return (
       <>
         <Container>
-          <div>Sorry.Something wrong with this page.Please contact to example@mail.com</div>
+          <div>
+            Sorry.Something wrong with this page.Please contact to
+            example@mail.com
+          </div>
         </Container>
       </>
     );
