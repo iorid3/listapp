@@ -27,15 +27,10 @@ const Container = styled.div({
   height: "25%",
   maxWidth: "450px",
   minHeignt: "500px",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
 });
-
-function getModalStyle() {
-  return {
-    top: "50%",
-    left: "50%",
-    transform: "translate(-50%, -50%)",
-  };
-}
 
 interface Props {
   isOpen: boolean;
@@ -44,7 +39,6 @@ interface Props {
 }
 
 const ModalBase = ({ children, isOpen, onClose }: Props) => {
-  const [modalStyle] = useState(getModalStyle);
 
   return (
     <>
@@ -53,7 +47,7 @@ const ModalBase = ({ children, isOpen, onClose }: Props) => {
         onClose={onClose}
         slots={{ backdrop: CustomBackdrop }}
       >
-        <Container style={modalStyle}>{children}</Container>
+        <Container>{children}</Container>
       </Modal>
     </>
   );

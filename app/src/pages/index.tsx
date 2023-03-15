@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 import React, { useEffect, useState } from "react";
 import InfiniteScroll from "react-infinite-scroller";
 
-import ApiCalls from "./api/apiCall";
+import apiCalls from "./api/apiCall";
 import Card from "../comps/card";
 import ModalBase from "../comps/modal";
 import ModalCard from "../comps/modalCard";
@@ -27,7 +27,6 @@ const Wrapper = styled.div({
 const Home = () => {
   const [list, setList] = useState([]);
   const [arrangeList, setArrangeList] = useState([]);
-  const [hasMore, setHasMore] = useState(true);
   const [isOpen, setIsOpen] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const [count, setCount] = useState(0);
@@ -41,13 +40,9 @@ const Home = () => {
     getAllList();
   }, []);
 
-
-  // this userInfo is for the future developemnt. When this app has a user signin/up funtion
-  const userInfo = "";
-
   const getAllList = async () => {
     if (count < 1) {
-      const listInfo = await ApiCalls().getAllLists(userInfo);
+      const listInfo = await apiCalls.getAllLists();
       const dataList: any = listInfo;
       setCount(count + 1);
       if (dataList) {
@@ -64,10 +59,10 @@ const Home = () => {
         setArrangeList([...arrangeList, ...visibleData]);
         setCurrentPage(currentPage + 1);
       }
-      if (!list) {
-        setHasMore(false);
-        return;
-      }
+      // if (!list) {
+      //   setHasMore(false);
+      //   return;
+      // }
     }
   };
 
@@ -90,10 +85,9 @@ const Home = () => {
       <Container>
         <Wrapper>
           <div>REL Technology - FE assignment</div>
-          {arrangeList.map((index, i) => (
-            <>
+          {arrangeList?.map((index, i) => (
+            <React.Fragment key = {i}>
               <Card
-                key={i}
                 listTitle={index["title"]}
                 listWord={(index["body"] as string).substring(0, 100)}
                 onclick={() => handleOpen(i)}
@@ -108,7 +102,7 @@ const Home = () => {
                   />
                 )}
               </ModalBase>
-            </>
+            </React.Fragment>
           ))}
         </Wrapper>
       </Container>

@@ -1,9 +1,9 @@
 import axios from "axios";
 
-export const fetchMethod = async (url: string, data: any, method: string) => {
+export const fetchMethod = async (url: string, method: string) => {
   axios.interceptors.response.use(
     (response) => {
-      return response.data;
+      return response
     },
     (error) => {
       if (error.response?.status) {
@@ -13,7 +13,6 @@ export const fetchMethod = async (url: string, data: any, method: string) => {
   );
   return axios({
     url,
-    data,
     method,
   });
 };
